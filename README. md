@@ -1,0 +1,162 @@
+# Math to Code Assignment
+
+## Introduction
+
+The purpose of this assignment is to practise converting mathematical expressions into C++ functions. I implemented five mathematical functions and tested each function using two test cases.
+
+## 1. Function f(x, y)
+
+The first function calculates the square root of the sum of x squared and y squared.
+
+**Implementation:**
+
+```cpp
+double f(double x, double y)
+{
+    return sqrt(x * x + y * y);
+}
+```
+
+I used the `sqrt()` function from the C++ math library to calculate the square root.
+
+**Tests:**
+- f(3, 4) = 5
+- f(5, 12) = 13
+
+**Game development example:**
+
+This function can be used to calculate the distance between two points in a game, such as the distance between a player and an enemy.
+
+## 2. Function s(x)
+
+The second function calculates the absolute value of a number.
+
+**Implementation:**
+
+```cpp
+double s(double x)
+{
+    if (x < 0)
+    {
+        return -x;
+    }
+
+    return x;
+}
+```
+
+If the number is negative, the function changes it to positive. Otherwise, it returns the original number.
+
+**Tests:**
+- s(-5) = 5
+- s(7) = 7
+
+**Game development example:**
+
+Absolute value can be used to calculate the difference between two positions without considering their direction.
+
+## 3. Function f(n)
+
+The third function calculates the sum of i squared divided by n, where i goes from 0 to n.
+
+**Implementation:**
+
+```cpp
+double sumFunction(int n)
+{
+    double sum = 0;
+
+    for (int i = 0; i <= n; i++)
+    {
+        sum += (double)(i * i) / n;
+    }
+
+    return sum;
+}
+```
+
+I used a for loop to calculate each term and add it to the total sum. I used double to ensure that division can produce decimal values.
+
+**Tests:**
+- sumFunction(1) = 1
+- sumFunction(2) = 2.5
+
+**Game development example:**
+
+Summation can be used to calculate a player's total score from several rounds or levels.
+
+## 4. Function g(n)
+
+The fourth function contains both summation and product notation.
+
+**Implementation:**
+
+```cpp
+double g(int n)
+{
+    double sum = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        double product = 1;
+
+        for (int j = 1; j <= n; j++)
+        {
+            if (j != i)
+            {
+                product *= i * j;
+            }
+        }
+
+        sum += 3 * i + n * product;
+    }
+
+    return sum;
+}
+```
+
+I used two nested for loops. The outer loop calculates the summation, while the inner loop calculates the product. The if statement makes sure that j is not equal to i.
+
+**Tests:**
+- g(1) = 4
+- g(2) = 17
+
+**Game development example:**
+
+Products and summations can be useful in calculating combined game statistics, such as scores, multipliers and accumulated values.
+
+## 5. Function h(theta, x, y)
+
+The fifth function combines cosine, sine and square root operations.
+
+**Implementation:**
+
+```cpp
+double h(double theta, double x, double y)
+{
+    return cos(theta) * (x - (x * y) * x)
+         + sin(theta) * (y - x)
+         + sqrt((x + y) * x);
+}
+```
+
+I used the `cos()`, `sin()` and `sqrt()` functions from the C++ math library. The angle theta is given in radians.
+
+**Tests:**
+- h(0, 1, 3) = 0
+- h(0, 1, 0) = 2
+
+**Game development example:**
+
+Trigonometric functions are useful in game development for calculating movement, rotation and directions of game objects. Square roots can also be used in geometric calculations.
+
+## Testing
+
+I used the `assert()` function from the C++ library to test all five functions.
+
+Each function has at least two test cases. If a test fails, the program stops and displays an error message. If all tests pass, the program prints:
+
+```text
+All tests passed!
+
+
